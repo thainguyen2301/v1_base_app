@@ -1,0 +1,6 @@
+framework module V1BaseApp {
+  umbrella header "V1BaseApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

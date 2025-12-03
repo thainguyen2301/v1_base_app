@@ -1,0 +1,16 @@
+PODS:
+  - V1BaseApp (0.1.0)
+
+DEPENDENCIES:
+  - V1BaseApp (from `../`)
+
+EXTERNAL SOURCES:
+  V1BaseApp:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  V1BaseApp: 710b4536e42c61049a111be2c58f071eef0aa374
+
+PODFILE CHECKSUM: fe523ef874163949f99e83581c2ce183ad37dc4e
+
+COCOAPODS: 1.16.2

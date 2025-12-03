@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import V1BaseApp
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,4 +22,6 @@ class ViewController: UIViewController {
     }
 
 }
+
+
 
