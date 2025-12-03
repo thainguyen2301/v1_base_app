@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'V1BaseApp'
-  s.version          = '0.1.1'
+  s.version          = '0.1.3'
   s.summary          = 'This is a base library for using V1 style'
   s.description      = 'Base library for V1 style apps.'
   s.homepage         = 'https://github.com/141131796/V1BaseApp'

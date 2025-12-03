@@ -47,7 +47,7 @@
 		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		40C7837CD278935210BB42117977C42A /* V1BaseApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "V1BaseApp-dummy.m"; sourceTree = "<group>"; };
 		454BACA5A481F53512C090942BBE96C4 /* Pods-V1BaseApp_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-V1BaseApp_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4B3626372EE06A380003486A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4B3626372EE06A380003486A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ../BaseViewController.swift; sourceTree = "<group>"; };
 		514585FB0BA26CDC37286D1CDE811CA5 /* Pods-V1BaseApp_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-V1BaseApp_Tests-dummy.m"; sourceTree = "<group>"; };
 		613D6845AA216ED772A6DCAE512E1290 /* Pods-V1BaseApp_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-V1BaseApp_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		72334CFDB1269AF5FAD9A58E7D5EBE6F /* Pods-V1BaseApp_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-V1BaseApp_Example-dummy.m"; sourceTree = "<group>"; };
@@ -118,6 +118,14 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
+		4B3626892EE074C00003486A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4B3626372EE06A380003486A /* BaseViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		67B9A3F0D3B19CE618239AFDC327A15C /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,9 +180,9 @@
 		A1B238EA6916A2BA8607A11586AE9863 /* V1BaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				4B3626892EE074C00003486A /* Classes */,
 				2A239E2A71450135A29B14DEE8351191 /* Pod */,
 				6FAA96E2E1BBCD4809D6CFB4B7D6477A /* Support Files */,
-				4B3626372EE06A380003486A /* BaseViewController.swift */,
 			);
 			name = V1BaseApp;
 			path = ../..;
