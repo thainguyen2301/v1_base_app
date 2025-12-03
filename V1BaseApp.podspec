@@ -11,14 +11,17 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  # 🔥 REQUIRED for Swift pods
+  # Swift configuration
   s.swift_version = '5.0'
   s.requires_arc = true
-  s.requires_frameworks = true
 
-  # 🔥 This ensures your Swift module is correctly generated
+  # Optional: force dynamic framework if needed
+  # (You can delete this line; Swift pods are usually dynamic by default)
+  s.static_framework = false
+
+  # Make sure module name is correct for `import`
   s.module_name = 'V1BaseApp'
 
-  # Your source files
+  # Source files
   s.source_files = 'V1BaseApp/Classes/**/*'
 end
