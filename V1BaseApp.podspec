@@ -32,4 +32,6 @@ DESC
 
   # Optional: Dependencies (add if your pod relies on others, e.g., Alamofire)
   # s.dependency 'Alamofire', '~> 5.0'
+  s.dependency 'RxSwift', '~> 6.9.0'
+  s.dependency 'RxCocoa', '~> 6.9.0'
 end

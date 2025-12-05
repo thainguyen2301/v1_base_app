@@ -8,20 +8,32 @@
 
 import UIKit
 import V1BaseApp
+import RxCocoa
 
-class ViewController: BaseViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: BaseViewController<BaseViewModel> {
+    
+    private let button: UIButton = {
+        let button = UIButton()
+        button.setTitle("Hello World", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
+    }()
+    
+    override func createViewModel() -> BaseViewModel {
+        DemoViewModel()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func setupUI() {
+        view.addSubview(button)
+        button.setWidth(100).setHeight(100).setCenterX(0, relativeToView: view).setCenterY(0, relativeToView: view)
     }
-
+    
+    override func observers() {
+        button.rx.tap.asDriver().drive().disposed(by: bag)
+    }
 }
 
-
+class DemoViewModel: BaseViewModel {
+    
+}
 
