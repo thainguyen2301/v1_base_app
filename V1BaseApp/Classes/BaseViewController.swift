@@ -26,9 +26,9 @@ open class BaseViewController<T: BaseViewModel>: UIViewController, BaseViewContr
         get { return _viewModel as! T }  // Safe cast since createViewModel returns T
     }
   
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    required public init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     open func createViewModel() -> BaseViewModel {
         return BaseViewModel()
