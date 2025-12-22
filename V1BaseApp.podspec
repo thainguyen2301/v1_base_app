@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'V1BaseApp'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
 s.summary = 'This is a base library for using V1 style'
 s.description = <<-DESC
 Base library for V1 style apps. This pod provides foundational components, utilities, and extensions to streamline development of apps following the V1 design system. It includes helpers for UI styling, common networking patterns, and modular architecture support. Expand as needed for better App Store visibility and user discovery.
@@ -11,15 +11,14 @@ DESC
   s.author           = { '141131796' => 'thainx23@gmail.com' }
 
   s.source           = { :git => 'https://github.com/thainguyen2301/v1_base_app.git', :tag => s.version.to_s }
-
-  s.ios.deployment_target = '12.0'
-
+  s.static_framework = true
+  s.ios.deployment_target = '15.0'
+  s.pod_target_xcconfig = {
+      'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
+  }
   # Swift configuration
   s.swift_version = '5.0'
   s.requires_arc = true
-
-  # Framework type (dynamic by default for Swift; explicit for clarity)
-  s.static_framework = false
 
   # Module name for @import in consuming code
   s.module_name = 'V1BaseApp'
@@ -34,4 +33,6 @@ DESC
   # s.dependency 'Alamofire', '~> 5.0'
   s.dependency 'RxSwift', '~> 6.9.0'
   s.dependency 'RxCocoa', '~> 6.9.0'
+  s.dependency 'FirebaseCore', '~> 12.7.0'
+  s.dependency 'FirebaseAnalytics', '~> 12.7.0'
 end

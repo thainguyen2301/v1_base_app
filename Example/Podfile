@@ -1,13 +1,21 @@
-use_frameworks!
+use_frameworks! :linkage => :static
 
-platform :ios, '10.0'
+platform :ios, '15.0'
 
 target 'V1BaseApp_Example' do
   pod 'V1BaseApp', :path => '../'
 
   target 'V1BaseApp_Tests' do
-    inherit! :search_paths
+    inherit! :search_paths    
+  end
 
-    
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+        # Suppress common Xcode 16+ warnings if needed
+        config.build_settings['GCC_WARN_INHIBIT_ALL_WARNINGS'] = 'YES'  # Temp for lint noise
+      end
+    end
   end
 end

@@ -31,6 +31,11 @@ class ViewController: BaseViewController<BaseViewModel> {
     override func observers() {
         button.rx.tap.asDriver().drive().disposed(by: bag)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        AppEventTracker.shared.trackEvent(name: "ViewController", params: nil)
+    }
 }
 
 class DemoViewModel: BaseViewModel {
