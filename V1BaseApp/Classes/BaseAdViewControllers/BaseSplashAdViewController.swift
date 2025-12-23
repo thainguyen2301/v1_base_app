@@ -31,7 +31,7 @@ open class BaseSplashAdViewController<T:BaseViewModel>: BaseViewController<T>, S
     private func initAdConsentIfNeeded() {
         AdManager.shared.initAdsWithConsent(from: self) { [weak self] in
             guard let _self = self else {return}
-            _self.showInterAd()
+            //_self.showInterAd()
         } onError: { error in
             
         }

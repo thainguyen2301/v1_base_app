@@ -29,6 +29,7 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
     }
     
     override func observers() {
+        super.observers()
         button.rx.tap.asDriver().drive().disposed(by: bag)
     }
     
@@ -39,6 +40,11 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
     
     override func makeInterModel() -> InterstitialAdModel {
         InterstitialAdModel(adID: "ca-app-pub-3940256099942544/4411468910", adName: "inter_splash")
+    }
+    
+    override func localize() {
+        super.localize()
+        print("Localize")
     }
 }
 

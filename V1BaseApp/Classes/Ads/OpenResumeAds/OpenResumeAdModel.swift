@@ -1,23 +1,19 @@
 //
-//  InterstitialAdModel.swift
+//  OpenResumeAdModel.swift
 //  V1BaseApp
 //
-//  Created by ThaiNguyen on 22/12/25.
+//  Created by ThaiNguyen on 23/12/25.
 //
 
 import Foundation
 
-public enum FullScreenDisplayMode {
-    case loadAndShow, loadOnly
-}
-
-public struct InterstitialAdModel {
+public struct OpenResumeAdModel {
     let adID: String
     let adName: String?
     let displayMode: FullScreenDisplayMode
     let shouldPreloadAfterShown: Bool
     
-    public init(adID: String, adName: String?, displayMode: FullScreenDisplayMode = .loadAndShow, shouldPreloadAfterShown: Bool = false) {
+    public init(adID: String, adName: String?, displayMode: FullScreenDisplayMode = .loadOnly, shouldPreloadAfterShown: Bool = false) {
         self.adID = adID
         self.adName = adName
         self.displayMode = displayMode

@@ -1,56 +1,39 @@
 //
-//  InterstitialAdProducer.swift
+//  OpenResumeAdProducer.swift
 //  V1BaseApp
 //
-//  Created by ThaiNguyen on 22/12/25.
+//  Created by ThaiNguyen on 23/12/25.
 //
 
 import Foundation
 import GoogleMobileAds
 
-public protocol InterstitialAdDelegate: AnyObject {
-    func requestViewControllerToShow() -> UIViewController?
-    func onAdLoaded(isAutoPreload: Bool)
-    func onAdLoadFailed(isAutoPreload: Bool)
-    func onAdImpression()
-    func onAdClicked()
-    func onAdFailedToShow()
-    func onNextAction()
-    func showNativeFullAd()
+public protocol OpenResumeAdDelegate: AnyObject {
+    
 }
 
-extension InterstitialAdDelegate {
+extension OpenResumeAdDelegate {
     public func requestViewControllerToShow() -> UIViewController? { return nil}
     public func onAdLoaded(isAutoPreload: Bool) {}
     public func onAdLoadFailed(isAutoPreload: Bool) {}
     public func onAdImpression() {}
     public func onAdClicked() {}
     public func onAdFailedToShow() {}
-    public func onNextAction() {}
-    public func showNativeFullAd() {}
 }
 
-public enum AdState {
-    case loaded, failedToLoad, initial, loading, showing, shown
-}
-
-public class InterstitialAdProducer: NSObject {
-    
-    let adModel: InterstitialAdModel
+open class OpenResumeAdProducer: NSObject {
+    private var state: AdState = .initial
+    let adModel: OpenResumeAdModel
     let tracker: AppEventTracker?
-    var state: AdState = .initial
-    weak var delegate: InterstitialAdDelegate? = nil
+    weak var delegate: OpenResumeAdDelegate?
+    private var ad: AppOpenAd?
     
-    private var ad: InterstitialAd?
-    
-    public init(adModel: InterstitialAdModel, tracker: AppEventTracker?, state: AdState = .initial, delegate: InterstitialAdDelegate? = nil) {
+    public init(adModel: OpenResumeAdModel, tracker: AppEventTracker?) {
         self.adModel = adModel
         self.tracker = tracker
-        self.state = state
-        self.delegate = delegate
     }
     
-    func setDelegate(_ delegate: InterstitialAdDelegate) {
+    func setDelegate(_ delegate: OpenResumeAdDelegate) {
         self.delegate = delegate
     }
     
@@ -78,7 +61,7 @@ public class InterstitialAdProducer: NSObject {
         Task {
             do {
                 state = .loading
-                ad = try await InterstitialAd.load(
+                ad = try await AppOpenAd.load(
                     with: adModel.adID, request: Request())
                 ad!.fullScreenContentDelegate = self
                 state = .loaded
@@ -116,33 +99,19 @@ public class InterstitialAdProducer: NSObject {
             return
         }
     }
-    
-    private func preloadThisAdIfNeeded(from viewController: UIViewController?) {
-        guard adModel.shouldPreloadAfterShown else { return }
-        load(from: viewController, isShowImmediately: false)
-    }
-    
-    private func resetAd() {
-        ad = nil
-        state = .initial
-    }
-    
-    private func handleNextActionAfterDismissAd() {
-        // TODO: Show native ad if valid
-        
-        // else handle next action
-        delegate?.onNextAction()
-    }
 }
 
-extension InterstitialAdProducer: FullScreenContentDelegate {
+extension OpenResumeAdProducer: FullScreenContentDelegate {
     public func adDidDismissFullScreenContent(_ ad: any FullScreenPresentingAd) {
-        resetAd()
-        preloadThisAdIfNeeded(from: nil)
-        handleNextActionAfterDismissAd()
+        delegate?.onAdClicked()
     }
     
     public func ad(_ ad: any FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: any Error) {
         delegate?.onAdFailedToShow()
     }
+    
+    public func adDidRecordImpression(_ ad: any FullScreenPresentingAd) {
+        delegate?.onAdImpression()
+    }
 }
+
