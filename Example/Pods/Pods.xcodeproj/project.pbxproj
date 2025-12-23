@@ -226,6 +226,7 @@
 		4B88AD5D2EFA54F500587E77 /* OpenResumeAdProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88AD5C2EFA54F500587E77 /* OpenResumeAdProducer.swift */; };
 		4B88AD5F2EFA7A9700587E77 /* AppOpenResumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88AD5E2EFA7A9700587E77 /* AppOpenResumable.swift */; };
 		4B88AD612EFA835600587E77 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88AD602EFA835600587E77 /* UIApplicationExtensions.swift */; };
+		4B88AD632EFA987B00587E77 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B88AD622EFA987B00587E77 /* LanguageManager.swift */; };
 		4BA8608B8B9B50F26D3FB9601FDD7328 /* Pods-V1BaseApp_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C4F70BB95A94FE6919BCB70F201C037 /* Pods-V1BaseApp_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BC1641694D0FA82DFE7BF7CCB862AA9 /* UIControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66320C5A52C16BCCE3D56457FE3610 /* UIControl+Rx.swift */; };
 		4BD85EC26F4DA9FA94F7C3D083B04160 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19C3D5C3618E625F3CD1154BCA7831E /* UIScrollView+Rx.swift */; };
@@ -1133,6 +1134,7 @@
 		4B88AD5C2EFA54F500587E77 /* OpenResumeAdProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenResumeAdProducer.swift; path = OpenResumeAds/OpenResumeAdProducer.swift; sourceTree = "<group>"; };
 		4B88AD5E2EFA7A9700587E77 /* AppOpenResumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppOpenResumable.swift; path = V1BaseApp/Classes/Ads/OpenResumeAds/AppOpenResumable.swift; sourceTree = "<group>"; };
 		4B88AD602EFA835600587E77 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIApplicationExtensions.swift; path = V1BaseApp/Classes/Extensions/UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		4B88AD622EFA987B00587E77 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LanguageManager.swift; path = V1BaseApp/Classes/Ads/Managers/LanguageManager.swift; sourceTree = "<group>"; };
 		4B920968D1C15EC6CC814D208F3FB3BA /* Platform.Darwin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.Darwin.swift; path = Platform/Platform.Darwin.swift; sourceTree = "<group>"; };
 		4BA3CB1659CC8B6A9EB95BA3F0885CEC /* Producer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Producer.swift; path = RxSwift/Observables/Producer.swift; sourceTree = "<group>"; };
 		4C593815864DB846EBD895D09542AAEE /* Generate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generate.swift; path = RxSwift/Observables/Generate.swift; sourceTree = "<group>"; };
@@ -2406,6 +2408,7 @@
 				B450D56F494A6A623827F2284CCCF29F /* Support Files */,
 				4B88AD5E2EFA7A9700587E77 /* AppOpenResumable.swift */,
 				4B88AD602EFA835600587E77 /* UIApplicationExtensions.swift */,
+				4B88AD622EFA987B00587E77 /* LanguageManager.swift */,
 			);
 			name = V1BaseApp;
 			path = ../..;
@@ -4383,6 +4386,7 @@
 				CA7E82C100EA5BF9EA36E45863C33D56 /* InterstitialAdProducer.swift in Sources */,
 				2418EED07074ECE9FB8A3F9952B18F37 /* UIViewExtensions.swift in Sources */,
 				F99F6B526F2D62B5C991A1875982844A /* V1BaseApp-dummy.m in Sources */,
+				4B88AD632EFA987B00587E77 /* LanguageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,8 +34,7 @@ open class BaseViewController<T: BaseViewModel>: UIViewController, BaseViewContr
     public var bag = DisposeBag()
     
     private lazy var _viewModel = createViewModel()
-    
-    private let languageChangedSubject = BehaviorRelay<ILanguage?>(value: nil)
+    private let languageService: LanguageManager = LanguageManager.shared
     
     // Computed property: Get returns the backing instance
     public var viewModel: T {
@@ -59,7 +58,7 @@ open class BaseViewController<T: BaseViewModel>: UIViewController, BaseViewContr
     
     open func observers() {
         print("Observer")
-        languageChangedSubject.asObservable().observe(on: MainScheduler.asyncInstance).subscribe(onNext: {[weak self] lang in
+        languageService.languageChangeSubject.asObservable().observe(on: MainScheduler.asyncInstance).subscribe(onNext: {[weak self] lang in
             guard let _self = self else {return}
             _self.localize()
         }).disposed(by: bag)
@@ -70,7 +69,7 @@ open class BaseViewController<T: BaseViewModel>: UIViewController, BaseViewContr
     }
     
     public func changeLanguage(_ language: ILanguage?) {
-        languageChangedSubject.accept(language)
+        languageService.languageChangeSubject.accept(language)
     }
 }
 
