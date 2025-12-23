@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'V1BaseApp'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
 s.summary = 'This is a base library for using V1 style'
 s.description = <<-DESC
 Base library for V1 style apps. This pod provides foundational components, utilities, and extensions to streamline development of apps following the V1 design system. It includes helpers for UI styling, common networking patterns, and modular architecture support. Expand as needed for better App Store visibility and user discovery.
