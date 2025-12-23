@@ -20,7 +20,7 @@ public class AppEventTracker {
         self.trackers = trackers
     }
     
-    public func trackEvent(name: String, params: [String: Any]?) {
+    public func trackEvent(name: String, params: [String: Any]? = nil) {
         trackers.forEach { tracker in
             tracker.trackEvent(name: name, params: params)
         }

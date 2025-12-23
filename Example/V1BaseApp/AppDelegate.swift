@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         let trackers: [EventTrackable] = [FirebaseEventTracker()]
         AppEventTracker.shared.setTrackers(trackers)
+        _ = AdManager.shared.setupTracker(AppEventTracker.shared)
         return true
     }
 

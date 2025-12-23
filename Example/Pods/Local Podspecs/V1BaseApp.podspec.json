@@ -38,7 +38,8 @@
     ],
     "FirebaseAnalytics": [
       "~> 12.7.0"
-    ]
+    ],
+    "Google-Mobile-Ads-SDK": []
   },
   "swift_version": "5.0"
 }

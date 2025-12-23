@@ -623,6 +623,10 @@ Copyright 2022 Google
    limitations under the License.
 
 
+## Google-Mobile-Ads-SDK
+
+Copyright 2025 Google LLC
+
 ## GoogleAdsOnDeviceConversion
 
 Copyright 2024 Google
@@ -630,6 +634,10 @@ Copyright 2024 Google
 ## GoogleAppMeasurement
 
 Copyright 2022 Google
+
+## GoogleUserMessagingPlatform
+
+Copyright 2025 Google LLC
 
 ## GoogleUtilities
 

@@ -35,4 +35,5 @@ DESC
   s.dependency 'RxCocoa', '~> 6.9.0'
   s.dependency 'FirebaseCore', '~> 12.7.0'
   s.dependency 'FirebaseAnalytics', '~> 12.7.0'
+  s.dependency 'Google-Mobile-Ads-SDK'
 end

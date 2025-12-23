@@ -10,7 +10,7 @@ import UIKit
 import V1BaseApp
 import RxCocoa
 
-class ViewController: BaseViewController<BaseViewModel> {
+class ViewController: BaseSplashAdViewController<BaseViewModel> {
     
     private let button: UIButton = {
         let button = UIButton()
@@ -35,6 +35,10 @@ class ViewController: BaseViewController<BaseViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         AppEventTracker.shared.trackEvent(name: "ViewController", params: nil)
+    }
+    
+    override func makeInterModel() -> InterstitialAdModel {
+        InterstitialAdModel(adID: "ca-app-pub-3940256099942544/4411468910", adName: "inter_splash")
     }
 }
 
