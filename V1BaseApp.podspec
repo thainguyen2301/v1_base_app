@@ -36,4 +36,5 @@ DESC
   s.dependency 'FirebaseCore', '~> 12.7.0'
   s.dependency 'FirebaseAnalytics', '~> 12.7.0'
   s.dependency 'Google-Mobile-Ads-SDK'
+  s.dependency 'SkeletonView'
 end

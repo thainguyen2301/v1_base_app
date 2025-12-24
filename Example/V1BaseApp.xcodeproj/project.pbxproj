@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B11E8312EF91FD3003B37AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B11E8302EF91FD3003B37AE /* GoogleService-Info.plist */; };
+		4B88AD692EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B88AD682EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib */; };
 		4D443B1C1AEA200EA754A15E /* Pods_V1BaseApp_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9BD9F64A76C6D704AFF11C /* Pods_V1BaseApp_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		1D165EAB2807897342A6B454 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2FD7E9A74D4602CD0D02E0F5 /* Pods-V1BaseApp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V1BaseApp_Example.release.xcconfig"; path = "Target Support Files/Pods-V1BaseApp_Example/Pods-V1BaseApp_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B11E8302EF91FD3003B37AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B88AD682EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ads_native_1_button_2_info_3_media.xib; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* V1BaseApp_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V1BaseApp_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				4B1D32482EFA396C0088E9F9 /* Utils */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				4B88AD682EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -267,6 +270,7 @@
 				4B11E8312EF91FD3003B37AE /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				4B88AD692EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

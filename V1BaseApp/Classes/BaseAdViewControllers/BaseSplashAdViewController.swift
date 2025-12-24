@@ -19,6 +19,11 @@ extension SplashAdPreparable {
 }
 
 open class BaseSplashAdViewController<T:BaseViewModel>: BaseViewController<T>, SplashAdPreparable, InterstitialAdDelegate {
+    
+    open func processAfterConsent() {
+        
+    }
+    
     open func makeInterModel() -> InterstitialAdModel {
         InterstitialAdModel(adID: "", adName: "")
     }
@@ -32,6 +37,7 @@ open class BaseSplashAdViewController<T:BaseViewModel>: BaseViewController<T>, S
         AdManager.shared.initAdsWithConsent(from: self) { [weak self] in
             guard let _self = self else {return}
             //_self.showInterAd()
+            _self.processAfterConsent()
         } onError: { error in
             
         }

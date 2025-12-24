@@ -97,12 +97,14 @@ PODS:
   - RxRelay (6.9.0):
     - RxSwift (= 6.9.0)
   - RxSwift (6.9.0)
-  - V1BaseApp (0.1.6):
+  - SkeletonView (1.30.4)
+  - V1BaseApp (0.1.7):
     - FirebaseAnalytics (~> 12.7.0)
     - FirebaseCore (~> 12.7.0)
     - Google-Mobile-Ads-SDK
     - RxCocoa (~> 6.9.0)
     - RxSwift (~> 6.9.0)
+    - SkeletonView
 
 DEPENDENCIES:
   - V1BaseApp (from `../`)
@@ -123,6 +125,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SkeletonView
 
 EXTERNAL SOURCES:
   V1BaseApp:
@@ -143,7 +146,8 @@ SPEC CHECKSUMS:
   RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
   RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
-  V1BaseApp: 5d1c5b751f5b4e001b5548404319b766c61d936d
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  V1BaseApp: 9d2cbc205fe4ed2df53e816e6d50c0a0b41a50ba
 
 PODFILE CHECKSUM: 45429d69544eab6b984f79d9b2489afb8c00f97a
 

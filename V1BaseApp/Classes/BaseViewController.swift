@@ -17,9 +17,7 @@ public protocol BaseViewControllerPreparable: AnyObject {
     func observers()
 }
 
-public protocol ILanguage {
-    
-}
+public protocol ILanguage {}
 
 public protocol LanguageTranslatable {
     func localize()
@@ -52,9 +50,7 @@ open class BaseViewController<T: BaseViewModel>: UIViewController, BaseViewContr
         observers()
     }
 
-    open func setupUI() {
-        
-    }
+    open func setupUI() {}
     
     open func observers() {
         print("Observer")
@@ -64,9 +60,7 @@ open class BaseViewController<T: BaseViewModel>: UIViewController, BaseViewContr
         }).disposed(by: bag)
     }
     
-    open func localize() {
-        
-    }
+    open func localize() {}
     
     public func changeLanguage(_ language: ILanguage?) {
         languageService.languageChangeSubject.accept(language)

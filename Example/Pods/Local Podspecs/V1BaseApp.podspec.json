@@ -1,6 +1,6 @@
 {
   "name": "V1BaseApp",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "summary": "This is a base library for using V1 style",
   "description": "Base library for V1 style apps. This pod provides foundational components, utilities, and extensions to streamline development of apps following the V1 design system. It includes helpers for UI styling, common networking patterns, and modular architecture support. Expand as needed for better App Store visibility and user discovery.",
   "homepage": "https://github.com/thainguyen2301/v1_base_app",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/thainguyen2301/v1_base_app.git",
-    "tag": "0.1.6"
+    "tag": "0.1.7"
   },
   "static_framework": true,
   "platforms": {
@@ -39,7 +39,8 @@
     "FirebaseAnalytics": [
       "~> 12.7.0"
     ],
-    "Google-Mobile-Ads-SDK": []
+    "Google-Mobile-Ads-SDK": [],
+    "SkeletonView": []
   },
   "swift_version": "5.0"
 }

@@ -9,8 +9,11 @@
 import UIKit
 import V1BaseApp
 import RxCocoa
+import GoogleMobileAds
 
 class ViewController: BaseSplashAdViewController<BaseViewModel> {
+    @IBOutlet private weak var adContainer: UIView!
+    let nativeAd = NativeAdProducer(adModel: NativeAdModel(adId: "ca-app-pub-3940256099942544/3986624511", name: "home"))
     
     private let button: UIButton = {
         let button = UIButton()
@@ -36,6 +39,7 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         AppEventTracker.shared.trackEvent(name: "ViewController", params: nil)
+      
     }
     
     override func makeInterModel() -> InterstitialAdModel {
@@ -46,10 +50,37 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
         super.localize()
         print("Localize")
     }
+    
+    override func processAfterConsent() {
+        super.processAfterConsent()
+        produceNativeAd()
+    }
+    
+    private func produceNativeAd() {
+        nativeAd.setDelegate(delegate: self)
+        if let nibObjects = Bundle.main.loadNibNamed("ads_native_1_button_2_info_3_media", owner: nil, options: nil)?.first as? NativeAdView {
+            nativeAd.loadAdWithStyle(adView: nibObjects, controller: self)
+        }
+    }
 }
 
 class DemoViewModel: BaseViewModel {
     
+}
+
+extension ViewController: NativeProducerDelegate {
+    func didLoadAd(view: UIView) {
+        view.setNeedsLayout()
+            view.layoutIfNeeded()
+            print("AdView frames:")
+            view.subviews.forEach { print("Tag \($0.tag): \($0.frame)") }
+        adContainer.addSubview(view)
+        view.fullscreen()
+    }
+    
+    func didFailedToLoadAd() {
+        
+    }
 }
 
 
