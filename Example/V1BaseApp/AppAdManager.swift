@@ -25,7 +25,7 @@ class AppAdManager {
     }
     
     func showAllAppAdaptiveBannerAd(in view: UIView, controller: UIViewController) {
-        let bannerAd = BannerAdProducer(adModel: BannerAdModel(adId: "ca-app-pub-3940256099942544/2435281174", adName: "banner_all"))
+        let bannerAd = BannerAdProducer(adModel: BannerAdModel(adId: "ca-app-pub-3940256099942544/2435281174", adName: "banner_all", style: .collapsibleTop))
         bannerAd.load(in: view, viewController: controller)
     }
 }

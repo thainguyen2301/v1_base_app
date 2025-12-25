@@ -35,11 +35,15 @@ public class AdManager {
         return self
     }
     
-    func produceInterstitialAd(model: InterstitialAdModel) -> InterstitialAdProducer {
+    public func produceInterstitialAd(model: InterstitialAdModel) -> InterstitialAdProducer {
         return InterstitialAdProducer(adModel: model, tracker: tracker)
     }
     
-    func produceBannerAdProducer(model: BannerAdModel) -> BannerAdProducer {
+    public func produceBannerAdProducer(model: BannerAdModel) -> BannerAdProducer {
         return BannerAdProducer(adModel: model)
+    }
+    
+    public func produceRewardAdProducer(model: RewardedAdModel) -> RewardedAdProducer {
+        return RewardedAdProducer(adModel: model, tracker: tracker)
     }
 }

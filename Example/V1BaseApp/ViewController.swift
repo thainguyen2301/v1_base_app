@@ -36,7 +36,10 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
         super.observers()
         button.rx.tap.asDriver().drive(onNext: { [weak self]  in
             guard let _self = self else {return}
-            _self.gotoDetailVC()
+            //[] show rewarded
+            _self.showRewardedAd()
+            //[1] show detail native
+            //_self.gotoDetailVC()
         }).disposed(by: bag)
       
     }
@@ -76,6 +79,17 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
     
     private func produceBannerAd() {
         AppAdManager.shared.showAllAppAdaptiveBannerAd(in: bannerContainer, controller: self)
+    }
+    
+    private func showRewardedAd() {
+        let rewardedAd = AdManager.shared.produceRewardAdProducer(model: RewardedAdModel(adId: "ca-app-pub-3940256099942544/1712485313", adName: "demo_reward"))
+        rewardedAd.stateSubject.asObservable().observe(on: MainScheduler.asyncInstance).subscribe(onNext: {[weak self] state in
+            guard let _self = self else {return}
+            if case .loaded = state {
+                rewardedAd.show(on: _self)
+            }
+        }).disposed(by: bag)
+        rewardedAd.load()
     }
     
     private func gotoDetailVC() {

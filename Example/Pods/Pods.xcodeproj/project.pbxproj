@@ -246,6 +246,8 @@
 		4AAFF6DB6C0CB325FEE1251724A12D33 /* NativeAdProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056855F9A5837052E4BFFF0C5656BD40 /* NativeAdProducer.swift */; };
 		4B059FA82EFD1CB2009C648C /* BannerAdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B059FA72EFD1CB2009C648C /* BannerAdModel.swift */; };
 		4B059FAA2EFD1D69009C648C /* BannerAdProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B059FA92EFD1D69009C648C /* BannerAdProducer.swift */; };
+		4B059FAC2EFD41A2009C648C /* RewardedAdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B059FAB2EFD41A2009C648C /* RewardedAdModel.swift */; };
+		4B059FAE2EFD41F5009C648C /* RewardedAdProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B059FAD2EFD41F5009C648C /* RewardedAdProducer.swift */; };
 		4B60B0A21E8C3B7537AEC1FC5EDBDA77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
 		4B850496D44468A5077BD430BA7B1B63 /* AnonymousObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845C0482A967CA469E20DBEABE1FF891 /* AnonymousObserver.swift */; };
 		4B874E2F94F38E304C9FE1E3A749CFDF /* ObserverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC922921449ADEE93CE37E5DB22E2293 /* ObserverType.swift */; };
@@ -1251,6 +1253,8 @@
 		4AC24DC4533A9E9246EDD16C1EE0CCC2 /* UICollectionView+CollectionSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+CollectionSkeleton.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UICollectionView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
 		4B059FA72EFD1CB2009C648C /* BannerAdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerAdModel.swift; path = V1BaseApp/Classes/Ads/BannerAds/BannerAdModel.swift; sourceTree = "<group>"; };
 		4B059FA92EFD1D69009C648C /* BannerAdProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BannerAdProducer.swift; path = V1BaseApp/Classes/Ads/BannerAds/BannerAdProducer.swift; sourceTree = "<group>"; };
+		4B059FAB2EFD41A2009C648C /* RewardedAdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardedAdModel.swift; path = V1BaseApp/Classes/Ads/RewardedAds/RewardedAdModel.swift; sourceTree = "<group>"; };
+		4B059FAD2EFD41F5009C648C /* RewardedAdProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RewardedAdProducer.swift; path = V1BaseApp/Classes/Ads/RewardedAds/RewardedAdProducer.swift; sourceTree = "<group>"; };
 		4B9D3612CC15D0700260C2DD54373B16 /* FIRAnalyticsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsConfiguration.h; path = FirebaseCore/Sources/FIRAnalyticsConfiguration.h; sourceTree = "<group>"; };
 		4BA1A7A13750819074E9BEBF179479CD /* RxCollectionViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxCollectionViewDelegateProxy.swift; sourceTree = "<group>"; };
 		4BCEABB734E5ED2A1302528D53E906DE /* CompactMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompactMap.swift; path = RxSwift/Observables/CompactMap.swift; sourceTree = "<group>"; };
@@ -2983,6 +2987,8 @@
 				052B9FFD589838B101564A270FD54AED /* Support Files */,
 				4B059FA72EFD1CB2009C648C /* BannerAdModel.swift */,
 				4B059FA92EFD1D69009C648C /* BannerAdProducer.swift */,
+				4B059FAB2EFD41A2009C648C /* RewardedAdModel.swift */,
+				4B059FAD2EFD41F5009C648C /* RewardedAdProducer.swift */,
 			);
 			name = V1BaseApp;
 			path = ../..;
@@ -4442,10 +4448,12 @@
 				7B6457FCCDB8170795C61AA46140F8B2 /* FirebaseTracker.swift in Sources */,
 				01ABA4E6033D00E2145FF3CDAEB50F99 /* GoogleMobileAdsConsentManager.swift in Sources */,
 				9BB4576C8D2D875720F35B78F82C70FF /* InterstitialAdModel.swift in Sources */,
+				4B059FAC2EFD41A2009C648C /* RewardedAdModel.swift in Sources */,
 				2215C01F8031A29EC6715121905C0B3F /* InterstitialAdProducer.swift in Sources */,
 				B9D0091C618B0AB58D9988B52A3B601D /* LanguageManager.swift in Sources */,
 				0777C7B1BA543B01240FFE9C7775525B /* NativeAdModel.swift in Sources */,
 				4B059FAA2EFD1D69009C648C /* BannerAdProducer.swift in Sources */,
+				4B059FAE2EFD41F5009C648C /* RewardedAdProducer.swift in Sources */,
 				4AAFF6DB6C0CB325FEE1251724A12D33 /* NativeAdProducer.swift in Sources */,
 				3713DCC78D8BB4A0FC933EFD8B9FA2D5 /* OpenResumeAdModel.swift in Sources */,
 				D578C7913717FC1DA997BDE5614E5C54 /* OpenResumeAdProducer.swift in Sources */,
