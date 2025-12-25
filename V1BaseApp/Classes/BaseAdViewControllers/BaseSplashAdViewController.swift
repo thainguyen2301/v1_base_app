@@ -41,7 +41,6 @@ open class BaseSplashAdViewController<T:BaseViewModel>: BaseViewController<T>, S
         } onError: { error in
             
         }
-
     }
     
     private func showInterAd() {

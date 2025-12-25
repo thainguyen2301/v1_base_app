@@ -26,16 +26,27 @@
                                     <constraint firstAttribute="height" constant="240" id="Hxn-rP-GJK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MxB-Eg-Ohc">
+                                <rect key="frame" x="0.0" y="327" width="375" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="mXo-iu-rjK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="MxB-Eg-Ohc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="8nC-Lu-yQq"/>
                             <constraint firstAttribute="trailing" secondItem="YEK-4z-NSL" secondAttribute="trailing" id="A71-xi-6Nq"/>
+                            <constraint firstAttribute="trailing" secondItem="MxB-Eg-Ohc" secondAttribute="trailing" id="ArD-0v-9rD"/>
                             <constraint firstItem="YEK-4z-NSL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BtP-xT-uJ1"/>
+                            <constraint firstItem="YEK-4z-NSL" firstAttribute="top" secondItem="MxB-Eg-Ohc" secondAttribute="bottom" id="SXB-kM-hue"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="YEK-4z-NSL" secondAttribute="bottom" id="h2A-E3-yZ4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="adContainer" destination="YEK-4z-NSL" id="0az-bo-FBI"/>
+                        <outlet property="bannerContainer" destination="MxB-Eg-Ohc" id="QXf-Zj-PXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4B11E8312EF91FD3003B37AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B11E8302EF91FD3003B37AE /* GoogleService-Info.plist */; };
 		4B88AD692EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B88AD682EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib */; };
+		4BD631662EFBE5A7009351A5 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BD631652EFBE5A7009351A5 /* DetailViewController.xib */; };
+		4BD631672EFBE5A7009351A5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD631642EFBE5A7009351A5 /* DetailViewController.swift */; };
+		4BD631692EFBE5E5009351A5 /* AppAdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD631682EFBE5E5009351A5 /* AppAdManager.swift */; };
 		4D443B1C1AEA200EA754A15E /* Pods_V1BaseApp_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9BD9F64A76C6D704AFF11C /* Pods_V1BaseApp_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 		2FD7E9A74D4602CD0D02E0F5 /* Pods-V1BaseApp_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V1BaseApp_Example.release.xcconfig"; path = "Target Support Files/Pods-V1BaseApp_Example/Pods-V1BaseApp_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B11E8302EF91FD3003B37AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B88AD682EFB90C100587E77 /* ads_native_1_button_2_info_3_media.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ads_native_1_button_2_info_3_media.xib; sourceTree = "<group>"; };
+		4BD631642EFBE5A7009351A5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4BD631652EFBE5A7009351A5 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		4BD631682EFBE5E5009351A5 /* AppAdManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdManager.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* V1BaseApp_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V1BaseApp_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +62,6 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4B1D32482EFA396C0088E9F9 /* Utils */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -116,6 +120,9 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				4B11E8302EF91FD3003B37AE /* GoogleService-Info.plist */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				4BD631642EFBE5A7009351A5 /* DetailViewController.swift */,
+				4BD631652EFBE5A7009351A5 /* DetailViewController.xib */,
+				4BD631682EFBE5E5009351A5 /* AppAdManager.swift */,
 			);
 			name = "Example for V1BaseApp";
 			path = V1BaseApp;
@@ -267,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				4BD631662EFBE5A7009351A5 /* DetailViewController.xib in Resources */,
 				4B11E8312EF91FD3003B37AE /* GoogleService-Info.plist in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -314,9 +322,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-V1BaseApp_Example/Pods-V1BaseApp_Example-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-V1BaseApp_Example/Pods-V1BaseApp_Example-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,7 +364,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD631672EFBE5A7009351A5 /* DetailViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				4BD631692EFBE5E5009351A5 /* AppAdManager.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

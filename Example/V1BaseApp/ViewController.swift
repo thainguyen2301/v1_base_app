@@ -10,10 +10,11 @@ import UIKit
 import V1BaseApp
 import RxCocoa
 import GoogleMobileAds
+import RxSwift
 
 class ViewController: BaseSplashAdViewController<BaseViewModel> {
     @IBOutlet private weak var adContainer: UIView!
-    let nativeAd = NativeAdProducer(adModel: NativeAdModel(adId: "ca-app-pub-3940256099942544/3986624511", name: "home"))
+    @IBOutlet weak var bannerContainer: UIView!
     
     private let button: UIButton = {
         let button = UIButton()
@@ -33,13 +34,25 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
     
     override func observers() {
         super.observers()
-        button.rx.tap.asDriver().drive().disposed(by: bag)
+        button.rx.tap.asDriver().drive(onNext: { [weak self]  in
+            guard let _self = self else {return}
+            _self.gotoDetailVC()
+        }).disposed(by: bag)
+      
+    }
+    
+    private func addAdToContainer(_ ad: UIView) {
+        adContainer.subviews.forEach { subView in
+            subView.removeFromSuperview()
+        }
+        
+        adContainer.addSubview(ad)
+        ad.fullscreen()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         AppEventTracker.shared.trackEvent(name: "ViewController", params: nil)
-      
     }
     
     override func makeInterModel() -> InterstitialAdModel {
@@ -54,13 +67,20 @@ class ViewController: BaseSplashAdViewController<BaseViewModel> {
     override func processAfterConsent() {
         super.processAfterConsent()
         produceNativeAd()
+        produceBannerAd()
     }
     
     private func produceNativeAd() {
-        nativeAd.setDelegate(delegate: self)
-        if let nibObjects = Bundle.main.loadNibNamed("ads_native_1_button_2_info_3_media", owner: nil, options: nil)?.first as? NativeAdView {
-            nativeAd.loadAdWithStyle(adView: nibObjects, controller: self)
-        }
+        AppAdManager.shared.loadDetailNativeAd()
+    }
+    
+    private func produceBannerAd() {
+        AppAdManager.shared.showAllAppAdaptiveBannerAd(in: bannerContainer, controller: self)
+    }
+    
+    private func gotoDetailVC() {
+        let detailVC = DetailViewController()
+        present(detailVC, animated: false)
     }
 }
 
@@ -68,19 +88,5 @@ class DemoViewModel: BaseViewModel {
     
 }
 
-extension ViewController: NativeProducerDelegate {
-    func didLoadAd(view: UIView) {
-        view.setNeedsLayout()
-            view.layoutIfNeeded()
-            print("AdView frames:")
-            view.subviews.forEach { print("Tag \($0.tag): \($0.frame)") }
-        adContainer.addSubview(view)
-        view.fullscreen()
-    }
-    
-    func didFailedToLoadAd() {
-        
-    }
-}
 
 

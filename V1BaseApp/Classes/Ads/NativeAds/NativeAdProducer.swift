@@ -1,8 +1,10 @@
 import Foundation
 import GoogleMobileAds
 import SkeletonView
-enum NativeAdState {
-    case initial
+import RxRelay
+
+public enum NativeAdState {
+    case initial, loading(styleView: UIView), loaded, shown, failedToLoad(Error)
 }
 
 private enum AdViewTags: Int {
@@ -21,26 +23,19 @@ public protocol NativeProducerDelegate: AnyObject {
 
 open class NativeAdProducer: NSObject {
     let adModel: NativeAdModel
-    let state: NativeAdState = .initial
-    
-    weak var delegate: NativeProducerDelegate?
     private var adLoader: AdLoader?
     private var nativeAd: NativeAd?
     private var nativeAdView: NativeAdView?
     
-    public init(adModel: NativeAdModel, delegate: NativeProducerDelegate? = nil) {
+    public let statusSubject = BehaviorRelay<NativeAdState>(value: .initial)
+    
+    public init(adModel: NativeAdModel) {
         self.adModel = adModel
-        self.delegate = delegate
         super.init()
     }
     
-    public func setDelegate(delegate: NativeProducerDelegate) {
-        self.delegate = delegate
-    }
-    
-    private func requestAd(controller: UIViewController) {
+    private func requestAd(controller: UIViewController?) {
         adLoader = nil
-
         adLoader = {
             let loader = AdLoader(
                 adUnitID: adModel.adId,
@@ -57,7 +52,7 @@ open class NativeAdProducer: NSObject {
         }
     }
     
-    public func loadAdWithStyle(adView: NativeAdView, controller: UIViewController) {
+    public func loadAdWithStyle(adView: NativeAdView, controller: UIViewController? = nil) {
         requestAd(controller: controller)
         adView.headlineView = adView.viewWithTag(AdViewTags.headline.rawValue)
         adView.bodyView = adView.viewWithTag(AdViewTags.body.rawValue)
@@ -70,7 +65,7 @@ open class NativeAdProducer: NSObject {
         
         guard adView.headlineView != nil, adView.mediaView != nil else {
             print("Missing required tagged views (headline tag 1 or media tag 4).")
-            delegate?.didFailedToLoadAd()
+            statusSubject.accept(.failedToLoad(NSError(domain: "", code: 111)))
             return
         }
         
@@ -81,10 +76,9 @@ open class NativeAdProducer: NSObject {
             attributionView.text = "Ad"
             attributionView.isHidden = false
         }
-      
+        statusSubject.accept(.loading(styleView: adView))
         nativeAdView = adView
         startSkeletingForAdView()
-        delegate?.didLoadAd(view: adView)
     }
     
     private func startSkeletingForAdView() {
@@ -158,12 +152,20 @@ open class NativeAdProducer: NSObject {
         }
     }
     
+    public func show(in view: UIView) {
+        guard case .loaded = statusSubject.value, let nativeAdView = nativeAdView else {
+            return
+        }
+        view.addSubview(nativeAdView)
+        nativeAdView.fullscreen()
+        statusSubject.accept(.shown)
+    }
 }
 
 extension NativeAdProducer: AdLoaderDelegate {
     public func adLoader(_ adLoader: AdLoader, didFailToReceiveAdWithError error: any Error) {
         print("Ad load failed: \(error.localizedDescription)")
-        delegate?.didFailedToLoadAd()
+        statusSubject.accept(.failedToLoad(error))
     }
 }
 
@@ -174,13 +176,13 @@ extension NativeAdProducer: NativeAdLoaderDelegate {
         hideSkeleton()
         guard let nativeAdView = nativeAdView else {
             print("Ad view not prepared. Call loadAdWithStyle first.")
-            delegate?.didFailedToLoadAd()
+            statusSubject.accept(.failedToLoad(NSError(domain: "", code: 111)))
             return
         }
         
         populateData(in: nativeAdView, with: nativeAd)
         nativeAdView.nativeAd = nativeAd
-        delegate?.didLoadAd(view: nativeAdView)
+        statusSubject.accept(.loaded)
     }
 }
 

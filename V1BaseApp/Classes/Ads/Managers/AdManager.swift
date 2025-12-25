@@ -38,4 +38,8 @@ public class AdManager {
     func produceInterstitialAd(model: InterstitialAdModel) -> InterstitialAdProducer {
         return InterstitialAdProducer(adModel: model, tracker: tracker)
     }
+    
+    func produceBannerAdProducer(model: BannerAdModel) -> BannerAdProducer {
+        return BannerAdProducer(adModel: model)
+    }
 }
